@@ -22,4 +22,18 @@ public class CanvasTest {
         canvas.addShape(new Square(10));
         assertEquals(300, canvas.square());
     }
+
+    @Test()
+    void countTest() {
+        Canvas innerCanvas = new Canvas();
+        innerCanvas.addShape(new Square(10));
+        innerCanvas.addShape(new Square(10));
+
+        Canvas canvas = new Canvas();
+        canvas.addShape(innerCanvas);
+        canvas.addShape(new Square(10));
+        canvas.addShape(new Rectangle(10, 20));
+
+        assertEquals(5, canvas.count());
+    }
 }
