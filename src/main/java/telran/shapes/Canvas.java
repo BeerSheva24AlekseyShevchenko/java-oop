@@ -35,8 +35,8 @@ public class Canvas implements Shape {
         int res = 0;
         for (Shape shape : shapes) {
             res++;
-            if (shape instanceof Canvas) {
-                res += ((Canvas)shape).count();
+            if (shape instanceof Canvas canvas) {
+                res += canvas.count();
             }
         }
         return res;
